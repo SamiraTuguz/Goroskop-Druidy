@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Goroskop"
+        android:theme="@style/Theme.Goroskop.Launcher"
         tools:targetApi="31">
         <activity
             android:name=".SecondActivity"

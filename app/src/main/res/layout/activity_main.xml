@@ -5,31 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#F8E5DA">
+    android:id="@+id/back"
+    android:background="@color/back">
 
-
-    <EditText
-        android:id="@+id/etDate"
-        android:layout_width="334dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:inputType="date"
-
-        app:layout_constraintEnd_toEndOf="@+id/tv1"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/tv1"
-        app:layout_constraintTop_toBottomOf="@+id/tv1"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/tv1"
-        android:layout_width="327dp"
-        android:layout_height="135dp"
-        android:layout_marginTop="32dp"
+        style="@style/my_style"
+        android:layout_width="362dp"
+        android:layout_height="262dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="Друиды верили, что дата рождения человека влияет на его характер и судьбу, и составляли свои гороскопы, опираясь на «древесный» календарь. \n Таким образом, у каждого из нас есть дерево-покровитель, наделяющее определенными качествами и свойствами."
-        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -37,27 +27,13 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#D58467"
         android:onClick="btnStartClick"
         android:text="узнать"
-        app:layout_constraintEnd_toEndOf="@+id/etDate"
-        app:layout_constraintHorizontal_bias="0.442"
-        app:layout_constraintStart_toStartOf="@+id/etDate"
-        app:layout_constraintTop_toBottomOf="@+id/etDate" />
-
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="339dp"
-        android:layout_height="116dp"
-        android:text="  Под покровительством какого дерева вы родились и как это сказалось на вашем характере?"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnStart"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toStartOf="@+id/btnStart"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintEnd_toEndOf="@+id/calendarView"
+        app:layout_constraintStart_toStartOf="@+id/calendarView"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -67,6 +43,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079"
+        app:layout_constraintVertical_bias="0.024"
         app:srcCompat="@drawable/logo" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="213dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
