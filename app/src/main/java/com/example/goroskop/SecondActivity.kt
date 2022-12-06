@@ -1,8 +1,10 @@
 package com.example.goroskop
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_second.*
 
@@ -13,7 +15,7 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        setTitle(getString(R.string.app_name))
+
         when (resources.configuration.uiMode.and(Configuration.UI_MODE_NIGHT_MASK)) {
             Configuration.UI_MODE_NIGHT_NO -> back2.background = getDrawable(R.color.back)
             Configuration.UI_MODE_NIGHT_YES -> back2.background = getDrawable(R.color.black)
@@ -24,7 +26,7 @@ class SecondActivity : AppCompatActivity() {
         if(result != null){
             text = result.getString("tree")!!
         }
-
+        setTitle(text)
         if(text == "яблоня"){
             ivTree.setImageResource(R.drawable.yablona)
             tvTree.text = getString(R.string.apple)
@@ -119,5 +121,11 @@ class SecondActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun btnMaimMenuClick(view: View) {
+        var intent : Intent = Intent(this@SecondActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
